@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        background-color: rgb(89, 216, 106);
+        width: 500px;
+      }
+      .cols1 {
+        width: 40%;
+        border: 1px solid black;
+      }
+      .cols2 {
+        width: 60%;
+        border: 1px solid black;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <table
+        align="center"
+        style="border-collapse: collapse; border: 1px solid black"
+      >
+        <tr>
+          <td class="cols1">Họ và tên</td>
+          <td class="cols2">
+            <input
+              style="width: 80%"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nhập họ và tên"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Địa chỉ</td>
+          <td class="cols2">
+            <input
+              style="width: 70%"
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Nhập địa chỉ"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Địa chỉ</td>
+          <td class="cols2">
+            <input
+              type="number"
+              id="phonenumber"
+              name="phonenumber"
+              placeholder="Nhập số điện thoại"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Giới tính</td>
+          <td class="cols2">
+            <input type="radio" id="sexual" name="male" />
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="female" />
+            <label for="sexual">Nữ</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Nghề nghiệp</td>
+          <td class="cols2">
+            <select name="job" id="job">
+              <option value="teacher">Giáo viên</option>
+              <option value="engineer">Kỹ sư</option>
+              <option value="worker">Công nhân</option>
+              <option value="doctor">Bác sĩ</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Chọn sản phẩm tham gia</td>
+          <td class="cols2">
+            <select name="product" id="product" size="4" multiple>
+              <option value="Kem đánh răng" selected>Kem đánh răng</option>
+              <option value="Bột giặt">Bột giặt</option>
+              <option value="Dầu gội đầu" selected>Dầu gội đầu</option>
+              <option value="Sữa tắm">Sữa tắm</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="cols1">Số người dự đoán tham gia</td>
+          <td class="cols2">
+            <input
+              type="number"
+              name="people"
+              id="people"
+              placeholder="25000"
+            />
+          </td>
+        </tr>
+        <tr align="center">
+          <td colspan="2"><button>Đồng ý</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
