@@ -1,24 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        width: 960px;
+        background-color: #facfcf;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+      }
+      .name-title p {
+        color: white;
+        font-size: 30px;
+        font-weight:bolder;
+      }
+      .nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #420000;
+        justify-content: center;
+      }
+      .menu-nav{
+        width: 25%;
+        padding-left: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header">
-            <div class="name-title">
-                <p>Slick<span style="color: rgb(109, 10, 10);">Red</span></p>
-            </div>
-            <div class="nav">
-                <p><a href="">Home</a></p>
-                <p><a href="">About</a></p>
-                <p><a href="">Products</a></p>
-                <p><a href="">Services</a></p>
-                <p><a href="">Design</a></p>
-            </div>
+      <div class="header">
+        <div class="name-title">
+          <p>Slick<span style="color: rgb(109, 10, 10)">Red</span></p>
         </div>
+        <div class="nav">
+          <div class="menu-nav">
+            <p><a href="">Home</a></p>
+          </div>
+          <div class="menu-nav">
+            <p><a href="">About</a></p>
+          </div>
+          <div class="menu-nav">
+            <p><a href="">Products</a></p>
+          </div>
+          <div class="menu-nav">
+            <p><a href="">Services</a></p>
+          </div>
+          <div class="menu-nav">
+            <p><a href="">Design</a></p>
+          </div>
+        </div>
+      </div>
     </header>
-</body>
+  </body>
 </html>
