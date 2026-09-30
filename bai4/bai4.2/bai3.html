@@ -1,65 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      a {
-        color: white;
-        text-decoration: none;
-      }
-      nav {
-        width: 700px;
-        height: 30px;
-        display: flex;
-        div {
-          background-color: blue;
-          width: 25%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          border-right: 1px solid white;
+        nav{
+            width: 700px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        div:hover {
-          background-color: red;
+        ul {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            display: inline-flex;
         }
-      }
-      .thegioi{
-      width: 200px;
-      }
-      ul{
-        list-style: none;
-        display: inline-flex;
-        background-color: red;
-        width: 100%;
-        padding-left: 0;
-        margin: 0 0 0 0;
         li{
-          width: 30%;
+            background-color: blue;
+            width: 25%;
+            border: 1px solid white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-      }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        li:hover{
+            background-color: red;
+        }
     </style>
     <title>Document</title>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
-      <div><a href="#">Chính trị-xã hội</a></div>
-      <div>
-        <a href="#">Thế giới</a>
-        <div class="thegioi">
-          <ul>
-            <li><a href="#">Thư viện pháp luật</a></li>
-            <li><a href="">Sống khoẻ</a></li>
-            <li><a href="">Pháp luật</a></li>
-          </ul>
-        </div>
-      </div>
-      <div><a href="#">Nhịp sống trẻ</a></div>
-      <div><a href="#">Giáo dục</a></div>
-      <div><a href="#">Kinh tế</a></div>
+        <ul>
+            <li><a href="">Chính trị-xã hội</a></li>
+            <li><a href="">Thế giới</a></li>
+            <div class="thegioi">
+              <ul>
+                <li>Thư viện pháp luật</li>
+                <li>Sống khoẻ</li>
+                <li>Pháp luật</li>
+              </ul>
+            </div>
+            <li><a href="">Nhịp sống trẻ</a></li>
+            <li><a href="">Giáo dục</a></li>
+            <li><a href="">Kinh tế</a></li>
+        </ul>
     </nav>
-  </body>
+</body>
 </html>
