@@ -1,66 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        .menu{
-            width: 700px;
-            height: 30px;
-            
-            display: flex;
-        }
-        .menu-button{
-            background-color: blue;
-            width: 20%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            border-right: 1px solid white;
-            color: white;
-        }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+      .menu {
+        width: 700px;
+        height: 30px;
 
-        .menu-button:hover{
-            background-color: red;
-        }
-        .thegioi{
-          position: relative;
-        }
+        display: flex;
+      }
+      .menu-button {
+        background-color: blue;
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-right: 1px solid white;
+        color: white;
+      }
+
+      .menu-button:hover {
+        background-color: red;
+      }
+      .thegioi {
+        position: relative;
+      }
+      .submenu {
+        display: none !important;
+      }
+      .thegioi:hover {
         .submenu {
-          position: absolute;
-          width: 420px;
-          height: 100%;
-          background-color: red;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          top:31px;
-          left:3px;
-          div{
-            width: 30%;
-            height: 100%;
-            border: 1px solid white;
-          }
+          display: flex !important;
         }
+      }
+      .submenu {
+        position: absolute;
+        width: 400px;
+        height: 100%;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 31px;
+        left: -140px;
+        div {
+          width: 33.33%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     </style>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="menu">
-        <div class="menu-button ">Chính trị xã hội</div>
-        <div class="menu-button thegioi">Thế giới
-          <div class="submenu">
-            <div>Thư viện pháp luật</div>
-            <div>Sống khoẻ</div>
-            <div>Pháp luật</div>
-          </div>
+      <div class="menu-button">Chính trị xã hội</div>
+      <div class="menu-button thegioi">
+        Thế giới
+        <div class="submenu">
+          <div><a href="#">Thư viện pháp luật</a></div>
+          <div><a href="#">Sống khoẻ</a></div>
+          <div><a href="#">Pháp luật</a></div>
         </div>
-        <div class="menu-button ">Nhịp sống trẻ</div>
-        <div class="menu-button ">Giáo dục</div>
-        <div class="menu-button ">Kinh tế</div>
+      </div>
+      <div class="menu-button">Nhịp sống trẻ</div>
+      <div class="menu-button">Giáo dục</div>
+      <div class="menu-button">Kinh tế</div>
     </div>
-</body>
+  </body>
 </html>
