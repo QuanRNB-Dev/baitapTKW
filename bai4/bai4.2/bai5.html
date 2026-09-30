@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .menu{
+            width: 200px;
+            height: 300px;
+            
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-button{
+            background-color: blue;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            padding-left: 10px;
+            box-sizing: border-box;
+            border-right: 1px solid white;
+            color: white;
+        }
+
+        .menu-button:hover{
+            background-color: red;
+        }
+        .xahoi {
+            position: relative;
+        }
+        .submenu {
+            display: none !important;
+        }
+        .xahoi:hover{
+            .submenu{
+                display: flex !important;
+                flex-direction: column;
+            }
+        }
+        .submenu{
+            position: absolute;
+            left: 200px;
+            top: 0;
+            background-color: red;
+
+            width: 200px;
+
+            div{
+                width:100%;
+                height: 60px;
+
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-button xahoi">Chính trị xã hội
+            <div class="submenu">
+                <div>Thư viện pháp luật</div>
+                <div>Sống khoẻ</div>
+                <div>Pháp luật</div>
+            </div>
+        </div>
+        <div class="menu-button thegioi">
+            Thế giới
+            
+        </div>
+        <div class="menu-button ">Nhịp sống trẻ</div>
+        <div class="menu-button ">Giáo dục</div>
+        <div class="menu-button ">Kinh tế</div>
+    </div>
+</body>
+</html>
