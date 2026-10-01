@@ -41,8 +41,30 @@
         align-items: center;
         justify-content: center;
       }
+      .submenu:hover {
+        background-color: rgb(106, 23, 23);
+      }
+      .truyenngan {
+        position: relative;
+      }
       .menulv2 {
-        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+
+        ul {
+          background-color: #10b19b;
+          width: 170px;
+
+          li::marker {
+            color: black;
+          }
+          li {
+            height: 50px;
+            border-bottom: 1px dotted #000000;
+            
+          }
+        }
       }
       .container {
         display: flex;
@@ -62,15 +84,16 @@
         text-align: justify;
         display: flex;
 
-        p{
-            margin-top:0;
+        p {
+          margin-top: 0;
+          width: 60%;
+          padding-left: 10px;
         }
       }
-      footer{
+      footer {
         background-color: black;
         color: white;
         height: 30px;
-        
       }
     </style>
     <title>Document</title>
@@ -138,7 +161,7 @@
       </div>
     </section>
     <footer>
-      <p align="center" style="padding:5px;">Bản quyền CNTT_HAUI.com</p>
+      <p align="center" style="padding: 5px">Bản quyền CNTT_HAUI.com</p>
     </footer>
   </body>
 </html>
