@@ -1,94 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        body{
-            width: 1550px;
-        }
-        img{
-            width: 1550px;
-            height: 100px
-        }
-        section{
-            width:100%;
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+      body {
+        width: 1550px;
+      }
+      img {
+        width: 1550px;
+        height: 100px;
+      }
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+      section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav {
+        background-color: #10b19b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 87%;
+        margin-top: 20px;
+        margin-left: 100px;
+      }
+      .submenu {
+        border-right: 1px dotted #fff;
+        color: red;
+        width: 150px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .menulv2 {
+        display: none;
+      }
+      .container {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 87%;
+        height: 400px;
+      }
+      .bookseft {
+        width: 25%;
+        height: 400px;
+        margin-top: 20px;
+      }
+      .content {
+        margin-top: -60px;
+        width: 65%;
+        text-align: justify;
+        display: flex;
 
+        p{
+            margin-top:0;
         }
-        .nav {
-            background-color: #10b19b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50px;
-            width: 87%;
-            margin-top:20px;
-        }
-        .submenu{
-            border-right:1px dotted #fff;
-            color: red;
-            width: 150px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        }
+      }
+      footer{
+        background-color: black;
+        color: white;
+        height: 30px;
+        
+      }
     </style>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="./4234f7d9-a26c-42c3-aa12-fc5cf4f1c17d.png" alt="ảnh mẫu">
+      <img src="./4234f7d9-a26c-42c3-aa12-fc5cf4f1c17d.png" alt="ảnh mẫu" />
     </header>
+    <div class="nav">
+      <div class="submenu">Trang chủ</div>
+      <div class="submenu">Truyện Blog</div>
+      <div class="submenu truyenngan">
+        Truyện ngắn
+        <div class="menulv2">
+          <ul>
+            <li><a href="">Truyện ngắn về tình yêu</a></li>
+            <li><a href="">Truyện ngắn về gia đình</a></li>
+            <li><a href="">Truyện ngắn về bạn bè</a></li>
+            <li><a href="">Truyện ngắn về đời sống</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="submenu">Sách hay</div>
+      <div class="submenu">Tâm sự</div>
+      <div class="submenu">Tiểu thuyết</div>
+      <div class="submenu">Tin tức</div>
+      <div class="submenu">Truyện cười</div>
+      <div class="submenu">Liên hệ</div>
+    </div>
     <section>
-        <div class="nav">
-            <div class="submenu">Trang chủ</div>
-            <div class="submenu">Truyện Blog</div>
-            <div class="submenu">
-                Truyện ngắn
-                <div class="menulv2">
-                    <ul>
-                        <li><a href="">Truyện ngắn về tình yêu</a></li>
-                        <li><a href="">Truyện ngắn về gia đình</a></li>
-                        <li><a href="">Truyện ngắn về bạn bè</a></li>
-                        <li><a href="">Truyện ngắn về đời sống</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="submenu">Sách hay</div>
-            <div class="submenu">Tâm sự</div>
-            <div class="submenu">Tiểu thuyết</div>
-            <div class="submenu">Tin tức</div>
-            <div class="submenu">Truyện cười</div>
-            <div class="submenu">Liên hệ</div>
+      <div class="container">
+        <div class="bookseft">
+          <h3>Tủ sách</h3>
+          <ul>
+            <li><a href="">Truyện nổi bật</a></li>
+            <li><a href="">Truyện mới</a></li>
+            <li><a href="">Tiểu thuyết mới</a></li>
+            <li><a href="">Truyện kiếm hiệp mới</a></li>
+            <li><a href="">Truyện khoa học viễn tưởng</a></li>
+            <li><a href="">Truyện trinh thám</a></li>
+            <li><a href="">Góc cười</a></li>
+            <li><a href="">Góc tâm sự</a></li>
+          </ul>
         </div>
-        <div class="container">
-            <div class="bookseft">
-                <h3>Tủ sách</h3>
-                <ul>
-                    <li><a href="">Truyện nổi bật</a></li>
-                    <li><a href="">Truyện mới</a></li>
-                    <li><a href="">Tiểu thuyết mới</a></li>
-                    <li><a href="">Truyện kiếm hiệp mới</a></li>
-                    <li><a href="">Truyện khoa học viễn tưởng</a></li>
-                    <li><a href="">Truyện trinh thám</a></li>
-                    <li><a href="">Góc cười</a></li>
-                    <li><a href="">Góc tâm sự</a></li>
-                </ul>
-            </div>
-            <div class="content">
-                <img src="./images.jpg" alt="ảnh mẫu">
-                <p>Truyện kể về giai đoạn mà đời người ai cũng từng trải qua nhưng đôi khi trong cuộc sống bộn bề với cơm áo gạo tiền và những nỗi lo không đặt hết tên, chúng ta đã ít nhiều quên mất nó từng tồn tại, đó là: Tuổi thơ. Tuổi thơ trong truyện Nguyễn Nhật Ánh không giống như bây giờ - khi ngươi ta có nhiều thứ để chơi và nhiều nơi để chọn như ra công viên nước lướt ván hoặc đắm mình trong các game. Tuổi thơ trong truyện Nguyễn Nhật Ánh là khi bạn còn chơi đùa với thiên nhiên, khi bạn thấy góc vườn nhà mình sao rộng thênh thang bạn "mặc nguyên quần áo dầm mưa ngoài trời" hay "bứt lá, kenh chơi bày hàng hay lùng sục các bờ hào tì hoa chi đẻ".</p>
-            </div>
+        <div class="content">
+          <img
+            align="left"
+            src="./{4DFFCBEC-06EB-4842-B4E1-E9B088EDA287}.png"
+            alt="ảnh mẫu"
+            style="width: 200px; height: 270px"
+          />
+          <p>
+            Truyện kể về giai đoạn mà đời người ai cũng từng trải qua nhưng đôi
+            khi trong cuộc sống bộn bề với cơm áo gạo tiền và những nỗi lo không
+            đặt hết tên, chúng ta đã ít nhiều quên mất nó từng tồn tại, đó là:
+            Tuổi thơ. Tuổi thơ trong truyện Nguyễn Nhật Ánh không giống như bây
+            giờ - khi ngươi ta có nhiều thứ để chơi và nhiều nơi để chọn như ra
+            công viên nước lướt ván hoặc đắm mình trong các game. Tuổi thơ trong
+            truyện Nguyễn Nhật Ánh là khi bạn còn chơi đùa với thiên nhiên, khi
+            bạn thấy góc vườn nhà mình sao rộng thênh thang bạn "mặc nguyên quần
+            áo dầm mưa ngoài trời" hay "bứt lá, kenh chơi bày hàng hay lùng sục
+            các bờ hào tì hoa chi đẻ".
+          </p>
         </div>
+      </div>
     </section>
     <footer>
-        <p>Bản quyền CNTT_HAUI.com</p>
+      <p align="center" style="padding:5px;">Bản quyền CNTT_HAUI.com</p>
     </footer>
-</body>
+  </body>
 </html>
