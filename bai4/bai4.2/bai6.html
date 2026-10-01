@@ -22,15 +22,20 @@
         .nav {
             background-color: #10b19b;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             height: 50px;
-            width: 90%;
+            width: 87%;
             margin-top:20px;
         }
         .submenu{
             border-right:1px dotted #fff;
             color: red;
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
         }
     </style>
@@ -44,7 +49,17 @@
         <div class="nav">
             <div class="submenu">Trang chủ</div>
             <div class="submenu">Truyện Blog</div>
-            <div class="submenu">Truyện ngắn</div>
+            <div class="submenu">
+                Truyện ngắn
+                <div class="menulv2">
+                    <ul>
+                        <li><a href="">Truyện ngắn về tình yêu</a></li>
+                        <li><a href="">Truyện ngắn về gia đình</a></li>
+                        <li><a href="">Truyện ngắn về bạn bè</a></li>
+                        <li><a href="">Truyện ngắn về đời sống</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="submenu">Sách hay</div>
             <div class="submenu">Tâm sự</div>
             <div class="submenu">Tiểu thuyết</div>
