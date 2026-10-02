@@ -40,6 +40,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        a {
+          color: red;
+        }
       }
       .submenu:hover {
         background-color: rgb(106, 23, 23);
@@ -48,22 +52,32 @@
         position: relative;
       }
       .menulv2 {
+        display: none;
+      }
+      .truyenngan:hover {
+        .menulv2 {
+          display: flex;
+        }
+      }
+      .menulv2 {
         position: absolute;
         top: 40px;
         left: 0px;
-
+        list-style-position:outside;
         ul {
           background-color: #10b19b;
           width: 170px;
-
           li::marker {
             color: black;
           }
           li {
             height: 50px;
+            line-height: 50px;
             border-bottom: 2px dotted #000000;
-            a{
+            a {
               color: red;
+              display: block;
+              text-align: center;
             }
           }
         }
@@ -105,10 +119,10 @@
       <img src="./4234f7d9-a26c-42c3-aa12-fc5cf4f1c17d.png" alt="ảnh mẫu" />
     </header>
     <div class="nav">
-      <div class="submenu">Trang chủ</div>
-      <div class="submenu">Truyện Blog</div>
+      <div class="submenu"><a href="">Trang chủ</a></div>
+      <div class="submenu"><a href="">Truyện Blog</a></div>
       <div class="submenu truyenngan">
-        Truyện ngắn
+        <a href="">Truyện ngắn</a>
         <div class="menulv2">
           <ul>
             <li><a href="">Truyện ngắn về tình yêu</a></li>
@@ -118,12 +132,12 @@
           </ul>
         </div>
       </div>
-      <div class="submenu">Sách hay</div>
-      <div class="submenu">Tâm sự</div>
-      <div class="submenu">Tiểu thuyết</div>
-      <div class="submenu">Tin tức</div>
-      <div class="submenu">Truyện cười</div>
-      <div class="submenu">Liên hệ</div>
+      <div class="submenu"><a href="">Sách hay</a></div>
+      <div class="submenu"><a href="">Tâm sự</a></div>
+      <div class="submenu"><a href="">Tiểu thuyết</a></div>
+      <div class="submenu"><a href="">Tin tức</a></div>
+      <div class="submenu"><a href="">Truyện cười</a></div>
+      <div class="submenu"><a href="">Liên hệ</a></div>
     </div>
     <section>
       <div class="container">
