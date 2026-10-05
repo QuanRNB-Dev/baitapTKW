@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      input {
+        width: 50px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Phương trình bậc 2</h1>
+    <p>Biểu thức có dạng: ax<sup>2</sup>+bx+c=0</p>
+    <br />
+    <p>Nhập a, b, c lần lượt:</p>
+    <br />
+    <span>a=</span><input id="a" type="number" /> <span>b=</span
+    ><input id="b" type="number" /> <span>c=</span
+    ><input id="c" type="number" />
+    <br />
+    <button onclick="myfunction()">Kết quả</button>
+    <div id="ketqua"></div>
+  </body>
+  <script>
+    function myfunction() {
+      let a = Number(document.getElementById("a").value);
+      let b = Number(document.getElementById("b").value);
+      let c = Number(document.getElementById("c").value);
+      let ketqua = document.getElementById("ketqua");
+      let x1, x2;
+      let delta = b * b - 4 * a * c;
+      if (a == 0) {
+        x1 = -c / b;
+      } else if (delta > 0) {
+        x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        x2 = (-b - Math.sqrt(delta)) / (2 * a);
+      } else if (delta == 0) {
+        x1 = -b / (2 * a);
+        x2 = null;
+      } else {
+        x1 = null;
+        x2=null;
+      }
+      if (x1 != null && x2 != null) {
+        ketqua.innerHTML = `<p>Biểu thức:${a}x<sup>2</sup>+${b}x+${c}=0 có kết quả là: <br>
+        x1=${x1} <br>
+        x2=${x2}</p>`;
+        s;
+      } else if (x1 != null && x2 == null) {
+        ketqua.innerHTML = `<p>Biểu thức:${a}x<sup>2</sup>+${b}x+${c}=0 có kết quả là: <br>
+        x=${x1}</p>`;
+      } else{
+              ketqua.innerHTML = `<p>Biểu thức:${a}x<sup>2</sup>+${b}x+${c}=0 có kết quả là: Phương trình vô nghiệm</p>`
+      }
+
+    }
+  </script>
+</html>
