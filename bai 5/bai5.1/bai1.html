@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      select {
+        width: 50px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Ngày tháng năm sinh:
+      <select name="day" id="day"></select>
+      <span>tháng</span>
+      <select name="month" id="month"></select>
+      <span>năm</span>
+      <select name="year" id="year"></select>
+    </p>
+  </body>
+  <script>
+    let day = document.getElementById("day");
+    let month = document.getElementById("month");
+    let nam = document.getElementById("year");
+
+    for (let i = 1; i <= 31; i++) {
+      day.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+    for (let i = 1; i <= 12; i++) {
+      month.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+    for (let i = 1900; i <= 2026; i++) {
+      nam.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+  </script>
+</html>
