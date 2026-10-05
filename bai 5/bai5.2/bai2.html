@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      button {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="nhapso(1)">1</button>
+    <button onclick="nhapso(2)">2</button>
+    <button onclick="nhapso(3)">3</button>
+    <button onclick="nhapso(4)">4</button>
+    <button onclick="nhapso(5)">5</button>
+    <button onclick="cong()">+</button>
+    <br />
+    <button onclick="nhapso(6)">6</button>
+    <button onclick="nhapso(7)">7</button>
+    <button onclick="nhapso(8)">8</button>
+    <button onclick="nhapso(9)">9</button>
+    <button onclick="nhapso(0)">0</button>
+    <button onclick="ketqua()">=</button>
+    <div id="ketqua1"></div>
+  </body>
+  <script>
+    let so1;
+    let so2;
+    let pheptinh;
+    function nhapso(so) {
+      if (so1 == undefined) {
+        so1 = so;
+      } else {
+        so2 = so;
+      }
+    }
+    function cong() {
+      pheptinh = "+";
+    }
+    function ketqua() {
+      let ketqua;
+      if (pheptinh == "+") {
+        ketqua = so1 + so2;
+      }
+
+      document.getElementById("ketqua1").innerHTML = ketqua;
+    }
+  </script>
+</html>
