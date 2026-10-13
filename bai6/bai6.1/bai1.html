@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var can = [
+        "Canh",
+        "Tân",
+        "Nhâm",
+        "Quí",
+        "Giáp",
+        "Ất",
+        "Bính",
+        "Đinh",
+        "Mậu",
+        "Kỷ",
+      ];
+      var chi = [
+        "Thân",
+        "Dậu",
+        "Tuất",
+        "Hợi",
+        "Tý",
+        "Sửu",
+        "Dần",
+        "Mão",
+        "Thìn",
+        "Tỵ",
+        "Ngọ",
+        "Mùi",
+      ];
+
+      function traCuu() {
+        var duong = document.getElementById("duong").value;
+        if (isNaN(duong)) {
+          alert("Năm sinh không hợp lệ");
+        }
+        document.getElementById("am").value =
+          can[duong % 10] + " " + chi[duong % 12];
+      }
+      function xoa() {
+        document.getElementById("duong").value = "";
+        document.getElementById("am").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <table border="1px solid black">
+      <tr>
+        <td colspan="2">Chương trình tra tuổi</td>
+      </tr>
+      <tr>
+        <td>Tuổi dương lịch</td>
+        <td><input id="duong" type="text" /></td>
+      </tr>
+      <tr>
+        <td>Tuổi âm lịch</td>
+        <td><input id="am" type="text" /></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <button onclick="xoa()">Xoá</button>
+          <button onclick="traCuu()">Tra cứu</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
