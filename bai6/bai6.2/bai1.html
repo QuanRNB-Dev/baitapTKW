@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            width: 50px;
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        var a, b, c, display, x1, x2, delta;
+        function myfunction(){
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+            c = document.getElementById("c").value;
+            display = document.getElementById("display");
+            delta = b*b - 4*a*c;
+            if (a == 0){
+                x1 = (-c)/b;
+                display.innerHTML = `<p>${a}x<sup>2</sup>+${b}x+${c} = 0 có nghiệm: <br>
+                x=${x1}</p>`
+            } else if(delta < 0){
+                display.innerHTML = `<p>${a}x<sup>2</sup>+${b}x+${c} = 0 vô nghiệm</p>`
+            }else if(delta == 0){
+                x1= (-b)/(2*a);
+                display.innerHTML = `<p>${a}x<sup>2</sup>+${b}x+${c} = 0 có nghiệm: <br>
+                x=${x1}</p>`
+            }else{
+                x1=(-b + Math.sqrt(delta))/(2*a);
+                x2=(-b - Math.sqrt(delta))/(2*a); 
+                display.innerHTML = `<p>${a}x<sup>2</sup>+${b}x+${c} = 0 có nghiệm: <br>
+                x1=${x1} <br>
+                x2=${x2}</p>`  
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Bài toán phương trình bậc 2 ax<sup>2</sup>+bx+c=0</h3>
+    <span>Nhập a=</span><input id="a" type="number"> <br>
+    <span>Nhập b=</span><input id="b" type="number"> <br>
+    <span>Nhập c=</span><input id="c" type="number"> <br>
+    <button id="calculate" onclick="myfunction()">Tính</button>
+    <div id="display"></div>
+</body>
+</html>
