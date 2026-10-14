@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a, dp;
+        function myFunction(){
+            a = Number(document.getElementById("a").value);
+            dp = document.getElementById("display");
+            if(isNaN(a)){
+                dp.innerHTML = `<p> Dữ liệu không đúng </p>`
+            }
+            dp.innerHTML = `<p> Dữ liệu đúng </p>`
+        }
+    </script>
+</head>
+<body>
+    <h3>JavaScript có thể kiểm soát form</h3>
+    <p>Hãy nhập số vào hộp text (từ 1 đến 10):</p>
+    <input id="a" type="text"> <button onclick="myFunction()">Submit</button>
+    <div id="display"></div>
+</body>
+</html>
