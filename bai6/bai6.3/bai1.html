@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            width: 50px;
+        }
+    </style>
+    <title>Document</title>
+    <script>
+        var a, b, c, a1, b1, c1, dp, x, y;
+        function myfunction(){
+             a = Number(document.getElementById("a").value);
+             b = Number(document.getElementById("b").value);
+             c = Number(document.getElementById("c").value);
+             a1 =Number(document.getElementById("a1").value);
+             b1 =Number(document.getElementById("b1").value);
+             c1 =Number(document.getElementById("c1").value);
+            dp = document.getElementById("display");
+
+            x = ((c-b*c1)/(a-b*a1));
+            y = ((a*c1 - a1*c)/(a-b*a1));
+            alert(x + " " +y);
+        }
+    </script>
+</head>
+<body>
+    <h3>Phương trình bậc nhất 2 ẩn</h3>
+    <p>ax+by=c</p>
+    <p>a'x+b'y=c'</p>
+    <p>Nhập giá trị a, b, c, a', b', c'</p>
+    <span>a=</span><input id="a" type="number"> <br>
+    <span>b=</span><input id="b" type="number"><br>
+    <span>c=</span><input id="c" type="number"><br>
+    <span>a'=</span><input id="a1" type="number"><br>
+    <span>b'=</span><input id="b1" type="number"><br>
+    <span>c'=</span><input id="c1" type="number"><br>
+    <button onclick="myfunction()">Kết quả</button>
+    <div id="display"></div>
+</body>
+</html>
