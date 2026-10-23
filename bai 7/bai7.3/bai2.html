@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+      }
+
+      .mayTinh {
+        width: 245px;
+        margin: 30px auto;
+        padding: 5px;
+        border: 5px ridge #cccccc;
+        background-color: #eeeeee;
+      }
+
+      #manHinh {
+        width: 180px;
+        height: 25px;
+        font-size: 15px;
+        text-align: right;
+      }
+
+      #boNho {
+        width: 30px;
+        height: 25px;
+      }
+
+      .nut {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3px;
+        margin-top: 5px;
+      }
+
+      button {
+        height: 25px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .nut button {
+        width: 100%;
+      }
+
+      .them {
+        display: block;
+        margin: 10px auto;
+      }
+
+      #nangCao {
+        display: none;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mayTinh">
+      <input type="text" id="manHinh" value="0" readonly />
+      <input type="text" id="boNho" readonly />
+
+      <div class="nut">
+        <button onclick="backspace()">BkSp</button>
+        <button onclick="xoaCE()">CE</button>
+        <button onclick="xoaC()">C</button>
+        <button onclick="themKyTu('/')">/</button>
+        <button onclick="tinhMotNgoi('sqrt')">sqr</button>
+
+        <button onclick="boNhoXoa()">MC</button>
+        <button onclick="nhapSo('7')">7</button>
+        <button onclick="nhapSo('8')">8</button>
+        <button onclick="nhapSo('9')">9</button>
+        <button onclick="tinhMotNgoi('square')">x²</button>
+
+        <button onclick="boNhoDoc()">MR</button>
+        <button onclick="nhapSo('4')">4</button>
+        <button onclick="nhapSo('5')">5</button>
+        <button onclick="nhapSo('6')">6</button>
+        <button onclick="themKyTu('*')">*</button>
+
+        <button onclick="boNhoLuu()">MS</button>
+        <button onclick="nhapSo('1')">1</button>
+        <button onclick="nhapSo('2')">2</button>
+        <button onclick="nhapSo('3')">3</button>
+        <button onclick="tinhMotNgoi('reciprocal')">1/x</button>
+
+        <button onclick="boNhoCong()">M+</button>
+        <button onclick="nhapSo('0')">0</button>
+        <button onclick="doiDau()">+/-</button>
+        <button onclick="nhapSo('.')">.</button>
+        <button onclick="themKyTu('-')">-</button>
+
+        <button onclick="themKyTu('+')">+</button>
+        <button onclick="bang()">=</button>
+      </div>
+
+      <button class="them" onclick="hienNangCao()">More Options</button>
+
+      <div id="nangCao">
+        <button onclick="phanTram()">%</button>
+        <button onclick="tinhMotNgoi('cube')">x³</button>
+        <button onclick="tinhMotNgoi('abs')">|x|</button>
+      </div>
+    </div>
+
+    <script>
+      var manHinh = document.getElementById("manHinh");
+
+      var soTruoc = 0;
+      var phepTinh = "";
+      var batDauMoi = true;
+      var boNho = 0;
+
+      function nhapSo(so) {
+        if (batDauMoi) {
+          manHinh.value = so == "." ? "0." : so;
+          batDauMoi = false;
+        } else {
+          if (so == "." && manHinh.value.includes(".")) {
+            return;
+          }
+
+          if (manHinh.value == "0" && so != ".") {
+            manHinh.value = so;
+          } else {
+            manHinh.value += so;
+          }
+        }
+      }
+
+      function themKyTu(phep) {
+        soTruoc = Number(manHinh.value);
+        phepTinh = phep;
+        batDauMoi = true;
+      }
+
+      function bang() {
+        var soSau = Number(manHinh.value);
+        var ketQua = 0;
+
+        switch (phepTinh) {
+          case "+":
+            ketQua = soTruoc + soSau;
+            break;
+
+          case "-":
+            ketQua = soTruoc - soSau;
+            break;
+
+          case "*":
+            ketQua = soTruoc * soSau;
+            break;
+
+          case "/":
+            if (soSau == 0) {
+              alert("Không thể chia cho 0!");
+              return;
+            }
+            ketQua = soTruoc / soSau;
+            break;
+
+          default:
+            return;
+        }
+
+        manHinh.value = ketQua;
+        phepTinh = "";
+        batDauMoi = true;
+      }
+
+      function xoaC() {
+        manHinh.value = "0";
+        soTruoc = 0;
+        phepTinh = "";
+        batDauMoi = true;
+      }
+
+      function xoaCE() {
+        manHinh.value = "0";
+        batDauMoi = true;
+      }
+
+      function backspace() {
+        if (batDauMoi) {
+          return;
+        }
+
+        manHinh.value = manHinh.value.slice(0, -1);
+
+        if (manHinh.value == "" || manHinh.value == "-") {
+          manHinh.value = "0";
+          batDauMoi = true;
+        }
+      }
+
+      function doiDau() {
+        manHinh.value = Number(manHinh.value) * -1;
+      }
+
+      function tinhMotNgoi(loai) {
+        var so = Number(manHinh.value);
+        var ketQua;
+
+        switch (loai) {
+          case "sqrt":
+            if (so < 0) {
+              alert("Không thể tính căn bậc hai số âm!");
+              return;
+            }
+            ketQua = Math.sqrt(so);
+            break;
+
+          case "square":
+            ketQua = so * so;
+            break;
+
+          case "cube":
+            ketQua = so * so * so;
+            break;
+
+          case "reciprocal":
+            if (so == 0) {
+              alert("Không thể chia cho 0!");
+              return;
+            }
+            ketQua = 1 / so;
+            break;
+
+          case "abs":
+            ketQua = Math.abs(so);
+            break;
+        }
+
+        manHinh.value = ketQua;
+        batDauMoi = true;
+      }
+
+      function phanTram() {
+        manHinh.value = Number(manHinh.value) / 100;
+        batDauMoi = true;
+      }
+
+      function boNhoXoa() {
+        boNho = 0;
+        document.getElementById("boNho").value = "";
+      }
+
+      function boNhoLuu() {
+        boNho = Number(manHinh.value);
+        document.getElementById("boNho").value = "M";
+      }
+
+      function boNhoDoc() {
+        manHinh.value = boNho;
+        batDauMoi = true;
+      }
+
+      function boNhoCong() {
+        boNho += Number(manHinh.value);
+        document.getElementById("boNho").value = "M";
+      }
+
+      function hienNangCao() {
+        var bangNangCao = document.getElementById("nangCao");
+
+        if (bangNangCao.style.display == "block") {
+          bangNangCao.style.display = "none";
+        } else {
+          bangNangCao.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
