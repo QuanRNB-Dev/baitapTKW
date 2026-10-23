@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Orders</title>
+
+    <style>
+      body {
+        font-family: "Times New Roman", serif;
+        font-size: 14px;
+      }
+
+      h3 {
+        text-align: center;
+        font-style: italic;
+      }
+
+      table {
+        margin: auto;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 4px;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      input[type="text"] {
+        width: 90px;
+      }
+
+      .buttons {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Your orders</h3>
+
+    <form id="orderForm" action="Process.php" method="post">
+      <table>
+        <tr>
+          <th>
+            <input type="checkbox" id="chonTatCa" onclick="chonTatCaDong()" />
+          </th>
+          <th>Order No</th>
+          <th>Customer Name</th>
+          <th>Order Date</th>
+          <th>Value</th>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              name="selected[]"
+              value="SHD 11"
+              onchange="kiemTraTatCa()"
+            />
+          </td>
+          <td>SHD 11</td>
+          <td>Nguyen Van A</td>
+          <td>12/2/2009</td>
+          <td>
+            <input
+              type="text"
+              name="value[SHD 11]"
+              value="20000"
+              class="giaTri"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              name="selected[]"
+              value="SHD 12"
+              onchange="kiemTraTatCa()"
+            />
+          </td>
+          <td>SHD 12</td>
+          <td>Nguyen Bich Thao</td>
+          <td>12/11/2009</td>
+          <td>
+            <input
+              type="text"
+              name="value[SHD 12]"
+              value="55000"
+              class="giaTri"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4" style="text-align: right">
+            <b>Total:</b>
+          </td>
+          <td>
+            <input type="text" id="tongTien" value="75000" readonly />
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="5" class="buttons">
+            <button type="button" onclick="capNhat()">Update</button>
+            <button type="submit">Save</button>
+            <button type="button" onclick="quayLai()">Back</button>
+            <button type="button" onclick="datLai()">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function chonTatCaDong() {
+        var chonTatCa = document.getElementById("chonTatCa");
+        var danhSach = document.getElementsByName("selected[]");
+
+        for (var i = 0; i < danhSach.length; i++) {
+          danhSach[i].checked = chonTatCa.checked;
+        }
+      }
+
+      function kiemTraTatCa() {
+        var danhSach = document.getElementsByName("selected[]");
+        var chonTatCa = document.getElementById("chonTatCa");
+        var dem = 0;
+
+        for (var i = 0; i < danhSach.length; i++) {
+          if (danhSach[i].checked) {
+            dem++;
+          }
+        }
+
+        chonTatCa.checked = dem == danhSach.length;
+      }
+
+      function capNhat() {
+        var giaTri = document.getElementsByClassName("giaTri");
+        var tong = 0;
+
+        for (var i = 0; i < giaTri.length; i++) {
+          var so = Number(giaTri[i].value);
+
+          if (giaTri[i].value.trim() == "" || isNaN(so) || so < 0) {
+            alert("Vui lòng nhập giá trị hóa đơn hợp lệ!");
+            giaTri[i].focus();
+            return;
+          }
+
+          tong += so;
+        }
+
+        document.getElementById("tongTien").value = tong;
+        alert("Cập nhật thành công!");
+      }
+
+      function quayLai() {
+        history.back();
+      }
+
+      function datLai() {
+        var danhSach = document.getElementsByName("selected[]");
+
+        for (var i = 0; i < danhSach.length; i++) {
+          danhSach[i].checked = false;
+        }
+
+        document.getElementById("chonTatCa").checked = false;
+      }
+    </script>
+  </body>
+</html>

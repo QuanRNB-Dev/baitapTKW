@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi màu nền</title>
+
+    <style>
+        .mau {
+            width: 110px;
+            height: 85px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #do {
+            background-color: red;
+        }
+
+        #xanhDuong {
+            background-color: blue;
+        }
+
+        #xanhLa {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Mouse over the squares and the background color will change!</h3>
+
+    <div class="mau" id="do"
+         onmouseover="doiMau('red')"
+         onmouseout="traLai()"></div>
+
+    <div class="mau" id="xanhDuong"
+         onmouseover="doiMau('blue')"
+         onmouseout="traLai()"></div>
+
+    <div class="mau" id="xanhLa"
+         onmouseover="doiMau('green')"
+         onmouseout="traLai()"></div>
+
+    <script>
+        function doiMau(mau) {
+            document.body.style.backgroundColor = mau;
+        }
+
+        function traLai() {
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+</body>
+</html>
