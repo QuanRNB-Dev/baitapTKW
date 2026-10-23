@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 1</title>
+</head>
+<body>
+
+    <h2>Bài tập 1</h2>
+
+    <form>
+        <label>Nhập nội dung:</label>
+        <input type="text" id="txtNoiDung"
+               onfocus="thongBaoFocus()"
+               onchange="thongBaoChange()">
+    </form>
+
+    <script>
+        function thongBaoFocus() {
+            alert("focus");
+        }
+
+        function thongBaoChange() {
+            alert("change");
+        }
+    </script>
+
+</body>
+</html>
