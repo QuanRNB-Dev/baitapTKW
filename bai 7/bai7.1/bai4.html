@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4 - Phép tính</title>
+</head>
+<body>
+
+    <form>
+        <label>Số thứ nhất</label>
+        <input type="text" id="so1">
+        <br><br>
+
+        <button type="button" onclick="tinh('+')">+</button>
+        <button type="button" onclick="tinh('-')">-</button>
+        <button type="button" onclick="tinh('*')">*</button>
+        <button type="button" onclick="tinh('/')">/</button>
+        <button type="button" onclick="tinh('^')">^</button>
+        <br><br>
+
+        <label>Số thứ hai</label>
+        <input type="text" id="so2">
+        <br><br>
+
+        <label>Kết quả</label>
+        <input type="text" id="ketqua">
+    </form>
+
+    <script>
+        function tinh(phepTinh) {
+            var a = document.getElementById("so1").value;
+            var b = document.getElementById("so2").value;
+
+            if (a == "" || b == "") {
+                alert("Vui lòng nhập đầy đủ hai số!");
+                return;
+            }
+
+            a = Number(a);
+            b = Number(b);
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Vui lòng nhập đúng dữ liệu số!");
+                return;
+            }
+
+            var kq;
+
+            switch (phepTinh) {
+                case "+":
+                    kq = a + b;
+                    break;
+
+                case "-":
+                    kq = a - b;
+                    break;
+
+                case "*":
+                    kq = a * b;
+                    break;
+
+                case "/":
+                    if (b == 0) {
+                        alert("Số thứ hai phải khác không!");
+                        return;
+                    }
+                    kq = a / b;
+                    break;
+
+                case "^":
+                    kq = Math.pow(a, b);
+                    break;
+            }
+
+            document.getElementById("ketqua").value = kq;
+        }
+    </script>
+
+</body>
+</html>
