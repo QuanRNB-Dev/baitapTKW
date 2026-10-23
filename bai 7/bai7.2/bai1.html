@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Form</title>
+</head>
+<body>
+
+
+    <div id="formEmail">
+        <div>
+            <label>Enter Your Mail Address</label>
+            <input type="text" name="email">
+            <button type="button" onclick="themDong()">Add More</button>
+        </div>
+    </div>
+
+    <script>
+        function themDong() {
+            var form = document.getElementById("formEmail");
+
+            var dong = document.createElement("div");
+
+            var nhan = document.createElement("label");
+            nhan.innerHTML = "Enter Your Mail Address";
+
+            var oNhap = document.createElement("input");
+            oNhap.type = "text";
+            oNhap.name = "email";
+
+            var nut = document.createElement("button");
+            nut.type = "button";
+            nut.innerHTML = "Remove";
+            nut.onclick = function() {
+                form.removeChild(dong);
+            };
+
+            dong.appendChild(nhan);
+            dong.appendChild(oNhap);
+            dong.appendChild(nut);
+
+            form.appendChild(dong);
+        }
+    </script>
+
+</body>
+</html>
